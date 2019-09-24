@@ -75,7 +75,26 @@ for i in L:
 print(List)
 
 #opgave 2
+d = {"red": 4, "blue": 4, "green": 14, "yellow": 2}
 
+# a) De waarde van rood veranderd in blauw 4 wordt 1 {'red': 1, 'blue': 1, 'green': 14, 'yellow': 2}
+a = d['red'] = d['blue']
+# b) verandert de waarde van blauw door er een aantal bij op te tellen
+d['blue'] += 10
+# c) verandert geel in de lengte van de hashmap
+c = d['yellow'] = len(d)
+# d) verandert groen in een hashmap met daarin de waarde van orange : 6
+d = d['green'] = {'orange' : 6}
+# e) reset/verandert alle waarden in de lijst naar 0
+e = d = dict.fromkeys(d, 0)
+# f) verwijdert een element uit de lijst
+f = d.pop('black', None)
+# g) Haalt de waarde van black op
+g = d.get('black', None)
+# h) stuurt de waarde van de hash terug als deze bestaat, als de hash niet bestaat wordt er een nieuwe hash element aangemaakt met daarin de waarde
+h = d.setdefault('black', None)
+# i) maakt de lijst leeg/ stelt het opnieuw in
+i = d = {}
 
 
 time.sleep(500)
