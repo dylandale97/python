@@ -1,5 +1,7 @@
 import time
 
+#opgave 1
+
 #a
 tup1 = (1, 2, 3, 4, 5)
 tup2 = (5,)
@@ -60,6 +62,7 @@ print(L1)
 # L2 = L[::-2]
 
 
+#opgave 2
 
 
 
