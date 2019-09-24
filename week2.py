@@ -52,7 +52,7 @@ print(L1)
 # L2 = L[::-2]
 
 #g
-L = [ ("x", 1), ("x", 2), ("x", 3), ("y", 1), ("y", 2), ("y", 3) ]
+L = [ ("x", 1), ("x", 2), ("x", 3), ("y", 1), ("y", 2), ("y", 3), ("z", 4) ]
 # D = "{ 'x': [1, 2, 3], 'y': [1, 2,3], 'z': [1] }"
 List = {}
 Tmp = []
@@ -70,6 +70,7 @@ for i in L:
         Tmp = []
         Tmp.append(i[1])
         keyword = i[0]
+        List[keyword] = Tmp
 
 print(List)
 
