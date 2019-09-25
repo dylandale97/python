@@ -96,5 +96,33 @@ h = d.setdefault('black', None)
 # i) maakt de lijst leeg/ stelt het opnieuw in
 i = d = {}
 
+#opgave 3
+
+#a)
+for item in sorted(D):
+    print(item[0], item[1])
+
+
+#b)
+D = {'a':1, 'b':2, 'c':3, 'd':1, 'e':3, 'f': 5}
+D1 = {}
+D2 = {}
+
+for item in D:
+    D1.setdefault(item, 0)
+    for item2 in D:
+        if D.get(item) == D.get(item2):
+            D1[item] += 1
+               
+
+for item in D1:
+    if(D1.get(item) == 1):
+        for item2 in D:
+            D2[item] = D.get(item)
+        
+
+print(D2)
+
+
 
 time.sleep(500)
