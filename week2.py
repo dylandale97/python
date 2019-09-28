@@ -123,6 +123,72 @@ for item in D1:
 
 print(D2)
 
+#optie 2
+
+from collections import Counter
+
+D = {'a':1, 'b':2, 'c':3, 'd':1, 'e':3, 'f': 5}
+D1 = Counter(dict(D).values())
+D2 = {}
+
+for i in D:
+    if D1[D.get(i)] == 1:
+        D2[i] = D.get(i)
+
+print(D2)
+
+#c) toevoegen in een hashmap zonder key?
+
+from collections import Counter
+
+L = [{"V":"S001"}, {"V": "S002"}, {"VI": "S001"}, {"VI": "S005"}, {"VII":"S005"}, {"V":"S009"}, {"VIII":"S007"}]
+L1 = []
+L2 = set()
+
+for i in L:
+    L1.append(list(dict(i).values())[0])
+
+for y in Counter(L1):
+    L2.add(y)
+
+print(L2)
+
+#d)
+print(Counter(L[0]) + Counter(L[1]))
+
+
+#e)
+keys = ['red', 'green', 'blue']
+values = ['#FF0000','#008000', '#0000FF']
+
+ind = dict(zip(keys, values))
+
+print(ind)
+
+
+#Opgave 4
+
+#b
+s1 = {1, 4, 5, 6}
+s2 = {1, 3, 6, 7} 
+s3 = set()
+
+# r = {3, 4, 5, 7}
+equal = False
+for x in s1:
+    if equal == True:
+        equal = False
+    for y in s2:
+        if(x == y):
+            equal = True
+    if equal == False:
+        s3.add(x) 
+
+for item in s2:
+    for itm in s3:
+        if
+
+print(s3)
 
 
 time.sleep(500)
