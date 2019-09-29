@@ -79,13 +79,56 @@ L = [x for x in S.split(' ')]
 
 #opgave 6
 #a)
+L = [1, 2, 3, 4, 5, 6]
+for i in range(1, 6):
+ L[i] = L[i - 1]
+ print(L)
+
+# ------------------
+# [1, 1, 3, 4, 5, 6]
+# [1, 1, 1, 4, 5, 6]
+# [1, 1, 1, 1, 5, 6]
+# [1, 1, 1, 1, 1, 6]
+# [1, 1, 1, 1, 1, 1]
 
 
 #b)
+L1 = list(range(1, 10, 2))
+L2 = L1
+L1[0] = 'abc'
+print(L1)
+print(L2)
 
+# -------------------
+# ['abc', 3, 5, 7, 9]
+# ['abc', 3, 5, 7, 9]
 
 #c)
+a, b = 0, 1
+while b < 10:
+ print (b)
+ a, b = b, a+b
+
+#--
+# 1
+# 1
+# 2
+# 3
+# 5
+# 8
+
+#opgave 7
+def palindroom(w1):
+    if w1 == w1[::-1]:
+        return True
+    else:
+        return False
+
+print(palindroom("lepel"))
+
+#opgave 8 ID
+
+#opgave 9
 
 
-
-
+#opgave 10
