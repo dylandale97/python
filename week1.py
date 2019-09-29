@@ -74,8 +74,17 @@ L1 > L2
 [x for x in L1 if x in L2]
 
 #opgave 5
+S = 'Guido van Rossum'
+L = [x for x in S.split(' ')]
+
+#opgave 6
+#a)
 
 
+#b)
+
+
+#c)
 
 
 
