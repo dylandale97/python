@@ -130,5 +130,13 @@ print(palindroom("lepel"))
 
 #opgave 9
 
+#a)
+
+#b)
+str = "AATGCCCTGA"
+for i in range(len(str)):
+    if str[i: i + 3] == "ATG":
+        if str[i + 6: i + 9] in ["TAG", "TAA", "TGA"]:
+            print(str[i + 3: i + 6])
 
 #opgave 10
