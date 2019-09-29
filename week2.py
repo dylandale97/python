@@ -168,7 +168,9 @@ print(ind)
 
 #Opgave 4
 
-#b
+#a) ID
+
+#b)
 s1 = {1, 4, 5, 6}
 s2 = {1, 3, 6, 7} 
 s3 = set()
@@ -183,12 +185,48 @@ for x in s1:
             equal = True
     if equal == False:
         s3.add(x) 
+for x in s2:
+    if equal == True:
+        equal = False
+    for y in s1:
+        if(x == y):
+            equal = True
+    if equal == False:
+        s3.add(x) 
 
-for item in s2:
-    for itm in s3:
-        if
+print(s3) 
 
-print(s3)
+#c)
+L = [1, 7, 4, 8, 9, 9, 4, 1, 4, 11, 14, 21, 15, 5, 2, 5]
+L2 = [15, 11]
+def findNumberInList(lst1, lst2) :
+    Lst3 = []
+    for itm in lst2:
+        for itm2 in lst1:
+            if itm == itm2:
+                Lst3.append(itm)
+    if(len(Lst3) == len(lst2)):
+        return True
+    else :
+        return False
 
+print(findNumberInList(L, L2))
+
+#opgave 5
+
+#a)
+def capitalize_all(t):
+    res = [s.capitalize() for s in t]  
+    return res
+
+print(capitalize_all("hallo"))
+
+#b)
+
+def only_upper(t):
+    res = [s for s in t if s.isupper()]
+    return res
+
+print(only_upper("HalLo"))
 
 time.sleep(500)
