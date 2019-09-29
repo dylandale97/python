@@ -39,3 +39,44 @@ L.sort()
 #m) Gooit de elementen in de lijst door elkaar
 random.shuffle(L)
 
+
+#opgave 3
+L = ['a', 'b', 'c', 'd', 'e']
+
+#a) ['b'] Er is een begin en eindpositie opgegeven, het begin start bij 1 en het eind start bij de laatste - 3
+L[1 : -3]
+#b) geeft het resultaat ['b', 'c'] Beginpositie -4 en de eindpositie -2
+L[-4 : -2]
+#c) ['a', 'b', 'c'] geeft de eerste 3 in de lijst weer
+L[:3]
+#d) ['a', 'b', 'c', 'd', 'e'] geeft eerst de eerste 2 weer daarna begint de index bij 2 en wordt dat erbij opgetelt
+L[:2] + L[2:]
+#e) ['a', 'b', 'c', 'd'] geeft alleen de laatse niet weer
+L[:-1]
+#f) ['e', 'd', 'c', 'b', 'a'] geeft alles achterste voren weer, kan ook gebruikt worden om een aantal iets weer te geven door wat over te slaan
+L[::-1]
+#g) ['a', 'b', 'c', 'd', 'e']
+L[:]
+
+#opgave 4
+L1 = [30, 1, 2, 1, 0]
+L2 = [1, 21, 13]
+
+#a) [30, 1, 2, 1, 0, 1, 21, 13] voegt de twee lijsten samen
+L1 + L2
+#b) [1, 21, 13, 1, 21, 13, 1, 21, 13] vermenigvuldigt de lijst van L2 3x
+3 * L2
+#c) True Kijkt of L1 groter is dan L2
+L1 > L2
+#d) [30, 1, 2, 1, 0] Zet de items over van L1
+[x for x in L1]
+#e) [1, 1] maakt een lijst door te kijken of de waarde van x ook voorkomt in L2
+[x for x in L1 if x in L2]
+
+#opgave 5
+
+
+
+
+
+
