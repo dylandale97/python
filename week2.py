@@ -15,7 +15,7 @@ tup1 = (4, 6, 100, 2, 8, 3, 1)
 print(tup1)
 
 #d
-str = "";
+str = ""
 tup = ('a', 'b', 'c')
 for i in tup:
     str += i
