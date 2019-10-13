@@ -71,6 +71,15 @@ for student in students:
     tmp = []
 print(two_demensional_lst)
 
+#b)
+lst = []
+tmp = ()
 
+for student in students:
+    tmp += (student, len(two_demensional_lst[student]))
+    lst.append(tmp)
+    tmp = ()
 
+print(lst)
 
+#c)
