@@ -40,7 +40,7 @@ for x in books_list:
 name.sort()
 
 print(books)
-#optie 2
+#optie 2 opgave 2 a
 import json
 from collections import Counter
 
