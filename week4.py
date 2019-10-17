@@ -1,3 +1,45 @@
+#opdracht 2
+with open ('books.json') as json_file:
+    books_list = json.load(json_file)
+'''
+Opgave 2a:
+
+money = 0
+y = 0
+
+for x in books_list:
+    for key, value in x.items():
+        if key == 'price':
+            money = money+value
+    y = y+1
+
+print(round(money/y, 2))
+
+Opgave 2b:
+'''
+temp = []
+name = []
+books = {}
+
+for x in books_list:
+    for key, value in x.items():
+        if key == 'author':
+            temp.append(value)
+
+
+for x in temp:
+    y = x.split()
+    name.append(y[1])
+
+for x in books_list:
+    for key, value in x.items():
+        if key == 'title':
+            books[value] = ''
+
+
+name.sort()
+
+print(books)
 #opdracht 4
 
 #opdracht 5

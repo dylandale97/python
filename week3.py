@@ -1,3 +1,65 @@
+#opgave 1 en 2
+'''
+Opgave 1a:
+i = 3, j = 0
+i = 4, j = 0
+
+Opgave 1b:
+I am class A
+I am class B
+i = 1
+i = 1, j = 2
+opgave 2
+staat in me map getekend.
+'''
+#opgave 3
+class Circle():
+    def init(self, straal, pie = 3.14):
+        self.straal = straal
+        self.pie = pie
+
+    def getOppervlakte(self):
+        oppervlakte = self.straal * self.straal * self.pie
+        print(oppervlakte)
+
+    def getOmtrek(self):
+        omtrek = (self.straal + self.straal) * self.pie
+        print(omtrek)
+
+new_circle = Circle(8)
+new_circle.getOppervlakte()
+new_circle.getOmtrek()
+#opgave 4
+class Roman(object):
+    rom_val = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+
+    @classmethod
+    def roman_to_int(cls, roman):
+        res = 0
+#       for letter in roman:
+        for i in range(len(roman)):
+            roman_digit = roman[i]
+            if i < len(roman) - 1:
+                next_roman_digit = roman[i+1]
+                if Roman.rom_val[next_roman_digit] > Roman.rom_val[roman_digit]:
+                    # volgende >= huidig
+                    res -= Roman.rom_val[roman_digit]
+                else:
+                   # volgende <= huidige
+                    res += Roman.rom_val[roman_digit]
+            else:
+                res += Roman.rom_val[roman_digit]
+
+
+        print(roman, res)
+        return res
+
+
+assert Roman.roman_to_int('C') == 100
+assert Roman.roman_to_int('XLIX') == 49
+assert Roman.roman_to_int('MMMCMLXXXVI') == 3986
+#opgave 5
+
 #opgave 6
 class StopWatch():
     startTime = 0
