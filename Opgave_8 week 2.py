@@ -24,6 +24,8 @@ ship_col = randint(0, BOARD_SIZE-1)
 guessL = []
 won = 0
 
+validation = True
+
 while NR_GUESSES > 0:
     tempL = [0,0]
 
@@ -32,24 +34,49 @@ while NR_GUESSES > 0:
     guessrow = int(input())
     print('Wich place?: ')
     guessplace = int(input())
-
-    for x in guessL:
-        while x[0] == guessrow and x[1] == guessplace:
-            print('This value is already chosen')
+    if guessplace <= 0 or guessrow <= 0 or guessplace > 4 or guessrow > 4:
+            validation = False
+            print('Pick a value between 0 and 4')
             print('Wich row?: ')
             guessrow = int(input())
             print('Wich place?: ')
             guessplace = int(input())
-    while guessplace<=0 or guessrow<=0 or guessplace>4 or guessrow>4:
-        print('Pick a value between 0 and 4')
-        print('Wich row?: ')
-        guessrow = int(input())
-        print('Wich place?: ')
-        guessplace = int(input())
+    for x in guessL:
+        while x[0] == guessrow and x[1] == guessplace:
+                print('This value is already chosen')
+                print('Wich row?: ')
+                guessrow = int(input())
+                print('Wich place?: ')
+                guessplace = int(input())
+        # while x[0] == guessrow and x[1] == guessplace or guessplace <= 0 or guessrow <= 0 or guessplace > 4 or guessrow > 4:
+        #     validation = False
+        #     if x[0] == guessrow and x[1] == guessplace:
+        #         print('This value is already chosen')
+        #         print('Wich row?: ')
+        #         guessrow = int(input())
+        #         print('Wich place?: ')
+        #         guessplace = int(input())
+        #     if guessplace<=0 or guessrow<=0 or guessplace>4 or guessrow>4:
+        #         print('Pick a value between 0 and 4')
+        #         print('Wich row?: ')
+        #         guessrow = int(input())
+        #         print('Wich place?: ')
+        #         guessplace = int(input())
+        # while x[0] == guessrow and x[1] == guessplace:
+        #     print('This value is already chosen')
+        #     print('Wich row?: ')
+        #     guessrow = int(input())
+        #     print('Wich place?: ')
+        #     guessplace = int(input())
+    # while guessplace<=0 or guessrow<=0 or guessplace>4 or guessrow>4:
+    #     print('Pick a value between 0 and 4')
+    #     print('Wich row?: ')
+    #     guessrow = int(input())
+    #     print('Wich place?: ')
+    #     guessplace = int(input())
 
-    tempL[0] = guessrow
-    tempL[1] = guessplace
-
+        tempL[0] = guessrow
+        tempL[1] = guessplace
 
     if guessrow == ship_row and guessplace == ship_col:
         print('You won!')
@@ -63,13 +90,12 @@ while NR_GUESSES > 0:
 
     print_board(board)
 
-
     guessL.append(tempL)
 
-    NR_GUESSES = NR_GUESSES -1
+    NR_GUESSES = NR_GUESSES - 1
 
 
 
 if won == 0:
-    print ("Game Over")
+    print("Game Over")
 
