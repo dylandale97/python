@@ -1,5 +1,3 @@
-import time
-
 #opgave 1
 
 #a
@@ -17,7 +15,7 @@ tup1 = (4, 6, 100, 2, 8, 3, 1)
 print(tup1)
 
 #d
-str = "";
+str = ""
 tup = ('a', 'b', 'c')
 for i in tup:
     str += i
@@ -229,4 +227,134 @@ def only_upper(t):
 
 print(only_upper("HalLo"))
 
-time.sleep(500)
+
+#opgave 6
+
+import string
+from collections import Counter
+L = [1, 2, 3, 3, 3, 3, 4, 5]
+print(Counter(L).keys())
+L1 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+for num in L1:
+    if num % 2 == 0:
+        print(num, end= " ")
+
+unique = string.ascii_lowercase
+unique1 = 'Hallo allemaal'
+stringcount = len(unique)
+if stringcount > 25:
+    boolean = True
+else:
+    boolean = False
+print(boolean)
+
+dict = {'ed': 5, 'carl': 3, 'alan': 1, 'bob': 2, 'dan': 4}
+print(sorted(dict.items()))
+
+#opgave 7
+
+#De main importeert mod b en c. In module b wordt module c al aangeroepen en in de main wordt ook module c aangeroepen dus er wordt 2 keer dezelfde klasse aangeroepen.
+
+#opgave 8
+
+from random import randint
+BOARD_SIZE = 4
+NR_GUESSES = 4
+
+# initializing board
+board = []
+
+for x in range(BOARD_SIZE):
+ board.append(["O"] * BOARD_SIZE)
+
+def print_board(board):
+    for row in board:
+        print (" ".join(row))
+
+# start the game and printing the board
+print("Let's play Battleship!")
+print_board(board)
+
+# define where the ship is
+ship_row = randint(0, BOARD_SIZE-1)
+ship_col = randint(0, BOARD_SIZE-1)
+
+
+guessL = []
+won = 0
+
+while NR_GUESSES > 0:
+    tempL = [0,0]
+
+    print('Make a guess: ')
+    print('Wich row?: ')
+    guessrow = int(input())
+    print('Wich place?: ')
+    guessplace = int(input())
+
+    for x in guessL:
+        while x[0] == guessrow and x[1] == guessplace:
+            print('This value is already chosen')
+            print('Wich row?: ')
+            guessrow = int(input())
+            print('Wich place?: ')
+            guessplace = int(input())
+    while guessplace<=0 or guessrow<=0 or guessplace>4 or guessrow>4:
+        print('Pick a value between 0 and 4')
+        print('Wich row?: ')
+        guessrow = int(input())
+        print('Wich place?: ')
+        guessplace = int(input())
+
+    tempL[0] = guessrow
+    tempL[1] = guessplace
+
+
+    if guessrow == ship_row and guessplace == ship_col:
+        print('You won!')
+        won = 1
+        break
+
+    for x in range(BOARD_SIZE):
+        if x+1 == guessrow:
+            temp = board[guessrow-1]
+            temp[guessplace-1] = 'x'
+
+    print_board(board)
+
+
+    guessL.append(tempL)
+
+    NR_GUESSES = NR_GUESSES -1
+
+
+
+if won == 0:
+    print ("Game Over")
+
+
+#opgave 9
+
+getal = 28
+Lsum = []
+x = 0
+
+while x < 10000:
+    Ltemp = []
+    sum = 0
+    y = 2
+    if y <= x:
+        while y <= x:
+            if x % y == 0:
+                Ltemp.append(x/y)
+            y = y+1
+        for a in Ltemp:
+            sum = sum + a
+        if sum == x:
+            Lsum.append(int(sum))
+    x = x+1
+
+print(Lsum)
+
+#opgave 10
+
