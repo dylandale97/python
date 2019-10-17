@@ -40,6 +40,21 @@ for x in books_list:
 name.sort()
 
 print(books)
+#optie 2
+import json
+from collections import Counter
+
+with open('books.json') as json_file:
+    data = json.load(json_file)
+    tmp = []
+    
+    for item in data:
+        if (item["topic"] == "Python"):
+            tmp.append(item["price"])
+
+    average = sum(tmp) / len(tmp)
+    print("{:.{}f}".format(average, 2 ))
+
 #opdracht 4
 
 #opdracht 5
